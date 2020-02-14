@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include<math.h>
+int main() {
+   int t;
+   scanf("%d",&t);
+   while(t--)
+   {
+       long int n,a,b,c,d,p,q,y,tw,ttr,i,ts;
+       scanf("%ld%ld%ld%ld%ld%ld%ld%ld",&n,&a,&b,&c,&d,&p,&q,&y);
+       int r[n];
+       for(i=1;i<=n;i++)
+           scanf("%d",&r[i]);
+       tw=abs(r[b]-r[a])*p;
+       ts=abs(r[c]-r[a])*p;
+       if(ts<=y)
+       {
+           ttr=y+(abs(r[d]-r[c])*q)+(abs(r[d]-r[b])*p);
+           if(ttr<tw)
+               printf("%ld\n",ttr);
+           else
+               printf("%ld\n",tw);
+       }
+       else
+           printf("%ld\n",tw);
+   }
+}
